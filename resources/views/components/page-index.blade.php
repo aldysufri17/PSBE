@@ -12,7 +12,7 @@
             <div class="breadcrumb-item">Daftar {{$title}}</div>
         </div>
     </div>
-    @include('alert.custom-alert')
+    <x-alert/>
     <div class="section-body">
         <div class="card">
             <div class="card-header">

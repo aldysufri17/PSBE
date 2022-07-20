@@ -59,6 +59,5 @@
         </tbody>
     </table>
 </x-page-index>
-@include('user.user-modal')
 @endsection
 

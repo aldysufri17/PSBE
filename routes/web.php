@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuditController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -17,13 +19,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home');
 });
 
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [DashboardController::class, 'indexPengguna'])->name('home');
+
+    Route::get('/dashboard', [DashboardController::class, 'indexAdmin'])->name('dashboard');
+
+    // Profile Routes
+    Route::prefix('profile')->name('profile.')->middleware('auth')->group(function () {
+        Route::get('/', [DashboardController::class, 'profile'])->name('detail');
+        Route::post('/update', [DashboardController::class, 'updateProfile'])->name('update');
+        Route::post('/update/ktm', [DashboardController::class, 'updateKTM'])->name('ktm');
+        Route::post('/update/foto', [DashboardController::class, 'updateFoto'])->name('foto');
+        Route::post('/change-password', [DashboardController::class, 'changePassword'])->name('change-password');
+    });
 
     // Pengguna
     Route::resource('pengguna', UserController::class);
@@ -32,4 +45,17 @@ Route::middleware(['auth'])->group(function () {
 
     // Roles
     Route::resource('role', RolesController::class);
+
+    // Audit
+    Route::prefix('audit')->group(function () {
+        // Audit Air
+        Route::name('air.')->group(function () {
+            Route::get('/index/audit-air', [AuditController::class, 'indexAir'])->name('index');
+        });
+
+        // Audit Energi
+        Route::name('energi.')->group(function () {
+            Route::get('/index/audit-energi', [AuditController::class, 'indexEnergi'])->name('index');
+        });
+    });
 });

@@ -21,7 +21,7 @@ class UserController extends Controller
         $id_user = Auth::user()->id;
         $user = User::where('id', '!=', $id_user)
             ->get();
-        return view('users.index', compact('user'));
+        return view('backend.users.index', compact('user'));
     }
 
     /**
@@ -32,7 +32,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-        return view('users.add', compact('roles'));
+        return view('backend.users.add', compact('roles'));
     }
 
     /**
@@ -87,7 +87,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::whereId($id)->first();
-        return view('users.edit', compact('user'));
+        return view('backend.users.edit', compact('user'));
     }
 
     /**

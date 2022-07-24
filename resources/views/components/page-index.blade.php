@@ -1,6 +1,6 @@
 @push('styles')
-<link rel="stylesheet" href="{{ asset('assets/vendors/datatables/dataTables.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/vendors/datatables/dataTable-select/css/select.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('backend/assets/vendors/datatables/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('backend/assets/vendors/datatables/dataTable-select/css/select.bootstrap4.min.css') }}">
 @endpush
 
 <section class="section">
@@ -39,11 +39,11 @@
 @push('scripts')
 
 <!-- Datatable -->
-<script src="{{ asset('assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/datatables/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/datatables/dataTable.button.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/datatables/dataTable.button.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/datatables/dataTable-select/js/select.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('backend/assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('backend/assets/vendors/datatables/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('backend/assets/vendors/datatables/dataTable.button.min.js') }}"></script>
+<script src="{{ asset('backend/assets/vendors/datatables/dataTable.button.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('backend/assets/vendors/datatables/dataTable-select/js/select.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
 <script>
     $(document).ready(function () {

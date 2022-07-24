@@ -1,5 +1,5 @@
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('assets/vendors/izitoast/dist/css/iziToast.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/vendors/izitoast/dist/css/iziToast.min.css') }}">
 @endpush
 
 {{-- Flash Message --}}

@@ -16,7 +16,7 @@ class RolesController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view('roles.index', compact('roles'));
+        return view('backend.roles.index', compact('roles'));
     }
 
     /**
@@ -26,7 +26,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        return view('roles.add');
+        return view('backend.roles.add');
     }
 
     /**
@@ -71,7 +71,7 @@ class RolesController extends Controller
     public function edit($id)
     {
         $role = Role::whereId($id)->first();
-        return view('roles.edit', compact('role'));
+        return view('backend.roles.edit', compact('role'));
     }
 
     /**

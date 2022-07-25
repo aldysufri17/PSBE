@@ -12,20 +12,29 @@
 </div>
 @endif
 
+@if (Auth::check())
+    <input id="name" hidden value="{{auth()->user()->name}}">
+@endif
 
 @push('scripts')
-    <script src="{{ asset('assets/vendors/izitoast/dist/js/iziToast.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendors/izitoast/dist/js/iziToast.min.js') }}"></script>
     <script>
         $(document).ready( function() {
+            var name = $('#name').val();
+            if (name) {
+                title = "Hello " + name
+            } else {
+                title = "Hello"
+            }
             if("{!! \Session::has('success') !!}") {
                 iziToast.success({
-                    title: 'Hello, ' + "{!! auth()->user()->name !!}",
+                    title: title,
                     message: "{!! \Session::get('success') !!}",
                     position: 'topRight'
                 });
             } else if("{!! \Session::has('error') !!}") {
                 iziToast.error({
-                    title: 'Hello, ' + "{!! auth()->user()->name !!}",
+                    title: title,
                     message: "{!! \Session::get('error') !!}",
                     position: 'topRight'
                 });

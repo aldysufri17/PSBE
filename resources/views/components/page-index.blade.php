@@ -50,24 +50,6 @@
         $(".create-button").click(function () {
             $('#loading').show();
         });
-
-        $('#dataTable').DataTable({
-            responsive: true
-        });
-
-        $(document).on('click', '.delete-btn', function () {
-            var sid = $(this).val();
-            $('#deleteModal').modal('show')
-            $('#delete_id').val(sid)
-            // alert(sid)
-        });
-
-        $(document).on('click', '.reset-btn', function () {
-            var rid = $(this).val();
-            $('#resetModal').modal('show')
-            $('#reset_id').val(rid)
-            // alert(sid)
-        });
     });
 </script>
 @endpush

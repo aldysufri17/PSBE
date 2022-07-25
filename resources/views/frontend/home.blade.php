@@ -1,6 +1,7 @@
 @extends('frontend.layouts.app')
 @section('title','Home')
 @section('content')
+<x-alert />
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-cntent-center align-items-center">
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
@@ -8,7 +9,8 @@
         <!-- Slide 1 -->
         <div class="carousel-item active">
             <div class="carousel-container">
-                <h2 class="animate__animated animate__fadeInDown"><span>PENGHARGAAN UNDIP BIDANG EFISIENSI ENERGI</span></h2>
+                <h2 class="animate__animated animate__fadeInDown"><span>PENGHARGAAN UNDIP BIDANG EFISIENSI ENERGI</span>
+                </h2>
                 <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid.
                     Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.
                     Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore
@@ -51,6 +53,7 @@
 
     </div>
 </section><!-- End Hero -->
+{{-- Flash Message --}}
 
 <!-- ======= Icon Boxes Section ======= -->
 <section id="icon-boxes" class="icon-boxes">
@@ -210,14 +213,10 @@
                                 </p>
                             </div>
                         </li>
-
                     </ul>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 </section><!-- End Why Us Section -->
 
@@ -367,12 +366,8 @@
                     </div>
                     <div class="text-center"><button type="submit">Send Message</button></div>
                 </form>
-
             </div>
-
         </div>
-
     </div>
 </section><!-- End Contact Section -->
-
 @endsection

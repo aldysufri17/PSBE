@@ -24,5 +24,15 @@ class UserSeeder extends Seeder
         ]);
 
         $user->assignRole('admin');
+
+        $user = User::create([
+            'name' => 'Teknik Komputer',
+            'email' => 'tekkom@mail.com',
+            'role_id' => 2,
+            'status' => 1,
+            'password' => bcrypt('secret'),
+        ]);
+
+        $user->assignRole('user');
     }
 }

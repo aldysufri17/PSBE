@@ -21,10 +21,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // User Factory
-        $users = User::factory(10)->create()->each(function ($user) {
-            $user->assignRole('user');
-        });
-        // $role = Role::findByName('pengguna');
-        // $role->users()->attach($users);
+        // $users = User::factory(10)->create()->each(function ($user) {
+        //     $user->assignRole('user');
+        // });
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AuditController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -45,17 +44,4 @@ Route::middleware(['auth'])->group(function () {
 
     // Roles
     Route::resource('role', RolesController::class);
-
-    // Audit
-    Route::prefix('audit')->group(function () {
-        // Audit Air
-        Route::name('air.')->group(function () {
-            Route::get('/index/audit-air', [AuditController::class, 'indexAir'])->name('index');
-        });
-
-        // Audit Energi
-        Route::name('energi.')->group(function () {
-            Route::get('/index/audit-energi', [AuditController::class, 'indexEnergi'])->name('index');
-        });
-    });
 });

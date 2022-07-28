@@ -32,4 +32,5 @@
     <!-- Template Main CSS File -->
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
     @stack('styles')
+    @livewireStyles
 </head>

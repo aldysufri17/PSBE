@@ -93,4 +93,9 @@ class DashboardController extends Controller
             return redirect()->back()->withInput()->with('error', 'Foto Gagal diperbarui!.');
         }
     }
+
+    public function cek(Request $request)
+    {
+        dd($request);
+    }
 }

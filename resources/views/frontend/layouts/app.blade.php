@@ -23,6 +23,7 @@
     <script src="{{asset('frontend/assets/vendor/php-email-form/validate.js')}}"></script>
     <!-- Template Main JS File -->
     <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+    @livewireScripts
     @stack('scripts')
 </body>
 

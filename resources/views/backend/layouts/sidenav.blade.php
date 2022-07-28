@@ -23,10 +23,11 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Data Audit</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Audit</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{route('air.index')}}">Penghematan Air</a></li>
-                    <li><a class="nav-link" href="{{route('energi.index')}}">Penghematan Energi</a></li>
+                    <li><a class="nav-link" href="{{route('audit.index')}}">Daftar Data Audit</a></li>
+                    <li><a class="nav-link" href="">Hasil Data Audit</a></li>
+                    {{-- <li><a class="nav-link" href="{{route('energi.index')}}">Penghematan Energi</a></li> --}}
                 </ul>
             </li>
         </ul>

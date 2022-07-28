@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAuditsTable extends Migration
+class CreateHasilTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateAuditsTable extends Migration
      */
     public function up()
     {
-        Schema::create('audits', function (Blueprint $table) {
+        Schema::create('hasil', function (Blueprint $table) {
             $table->id();
-            $table->text('pertanyaan');
+            $table->integer('user_id');
             $table->json('jawaban');
+            $table->integer('total');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateAuditsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('audits');
+        Schema::dropIfExists('hasil');
     }
 }

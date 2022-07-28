@@ -27,7 +27,7 @@
                   @else
                   <li class="dropdown"><a href="#"><span>Data Audit</span> <i class="bi bi-chevron-down"></i></a>
                       <ul>
-                          <li><a href="#">Tambah Data Audit</a></li>
+                          <li><a href="{{route('input.audit')}}">Input Data Audit</a></li>
                           <li><a href="#">Lihat Statistik</a></li>
                       </ul>
                   </li>

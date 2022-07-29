@@ -15,7 +15,7 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-header pb-0">
-                    <h4>{{'Form Tambah '. $title}}</h4>
+                    <h4>Form {{$page == 'create' ? 'Tambah ' : 'Ubah ' . $title}}</h4>
                 </div>
     
                 <div class="card-body pt-0">

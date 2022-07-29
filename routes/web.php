@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RolesController;
+use App\Http\Controllers\EnergiController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -44,4 +46,10 @@ Route::middleware(['auth'])->group(function () {
 
     // Roles
     Route::resource('role', RolesController::class);
+
+    // Kelola Jenis Energi
+    Route::resource('energi', EnergiController::class);
+
+    // Kelola Post
+    Route::resource('post', PostController::class);
 });

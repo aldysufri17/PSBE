@@ -1,6 +1,7 @@
 @extends('backend.layouts.app')
 @section('title','Daftar Pengguna')
 @section('content')
+@if ($user->IsNotEmpty())
 <x-page-index title="Pengguna" buttonLabel="Tambah Pengguna" routeCreate="pengguna.create">
     <table id="dataTable" class="table table-striped table-borderless responsive nowrap" style="width:100%">
         <thead>
@@ -38,18 +39,19 @@
                             <i class="fa fa-ban"></i>
                         </a>
                         @endif
-                        <button class="table-action btn btn-warning reset-btn mr-2" title="Reset Password" data-toggle="tooltip" value="">
+                        <button class="table-action btn btn-warning reset-btn mr-2" title="Reset Password"
+                            data-toggle="tooltip" value="">
                             <i class="fas fa-history"></i>
                         </button>
-                        <a href="" class="table-action btn btn-info mr-2" data-toggle="tooltip"
-                            title="Lihat">
+                        <a href="" class="table-action btn btn-info mr-2" data-toggle="tooltip" title="Lihat">
                             <i class="fas fa-eye"></i>
                         </a>
-                        <a href="{{route('pengguna.edit',$data->id)}}" class="table-action btn btn-primary mr-2" data-toggle="tooltip"
-                            title="Ubah">
+                        <a href="{{route('pengguna.edit',$data->id)}}" class="table-action btn btn-primary mr-2"
+                            data-toggle="tooltip" title="Ubah">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <button class="table-action btn btn-danger delete-btn mr-2" data-toggle="tooltip" title="Delete" value="{{$data->id}}">
+                        <button class="table-action btn btn-danger delete-btn mr-2" data-toggle="tooltip" title="Delete"
+                            value="{{$data->id}}">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
@@ -59,28 +61,34 @@
         </tbody>
     </table>
 </x-page-index>
-@include('backend.modal')
+@else
+<div class="align-items-center bg-light p-3 border-secondary rounded">
+    <span class="">Oops!</span><br>
+    <p><i class="fas fa-info-circle"></i> Belum Terdapat Data Pengguna</p>
+</div>
+@endif
+@include('backend.users.modal')
 @endsection
 
 @push('scripts')
-    <script>
-        $('#dataTable').DataTable({
-            responsive: true
-        });
+<script>
+    $('#dataTable').DataTable({
+        responsive: true
+    });
 
-        $(document).on('click', '.delete-btn', function () {
-            var sid = $(this).val();
-            $('#deleteModal').modal('show')
-            $('#delete_id').val(sid)
-            // alert(sid)
-        });
+    $(document).on('click', '.delete-btn', function () {
+        var sid = $(this).val();
+        $('#deleteModal').modal('show')
+        $('#delete_id').val(sid)
+        // alert(sid)
+    });
 
-        $(document).on('click', '.reset-btn', function () {
-            var rid = $(this).val();
-            $('#resetModal').modal('show')
-            $('#reset_id').val(rid)
-            // alert(sid)
-        });
-    </script>
+    $(document).on('click', '.reset-btn', function () {
+        var rid = $(this).val();
+        $('#resetModal').modal('show')
+        $('#reset_id').val(rid)
+        // alert(sid)
+    });
+
+</script>
 @endpush
-

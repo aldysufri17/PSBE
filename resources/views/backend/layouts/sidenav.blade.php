@@ -13,7 +13,7 @@
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-clipboard"></i><span>Masters</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{route('role.index')}}">Roles</a></li>
+                    {{-- <li><a class="nav-link" href="{{route('role.index')}}">Roles</a></li> --}}
                     <li><a class="nav-link" href="{{route('energi.index')}}">Jenis Energi</a></li>
                 </ul>
             </li>
@@ -28,7 +28,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Post Energi</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{route('post.index')}}">Daftar Post Energi</a></li>
-                    {{-- <li><a class="nav-link" href="">Penghematan Energi</a></li> --}}
+                    <li><a class="nav-link" href="">Statistik</a></li>
                 </ul>
             </li>
         </ul>

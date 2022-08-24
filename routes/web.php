@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\EnergiController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -52,4 +53,8 @@ Route::middleware(['auth'])->group(function () {
 
     // Kelola Post
     Route::resource('post', PostController::class);
+
+    // Frontend
+    Route::get('input-audit', [FrontendController::class, 'inputAudit'])->name('audit.input');
+    Route::post('input-audit', [FrontendController::class, 'auditStore'])->name('audit.store');
 });
